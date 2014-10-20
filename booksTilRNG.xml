@@ -14,6 +14,7 @@
 					<!-- Her sier vi at rekkefølgen på om vi først definerer tittel, adresse, navn på forfatter
 					eller editor er vilkårlig. Denne kan fjernes om ønskelig. -->
 					<interleave>
+						<choice>
 						<element name="author"> <!-- Her starter author-elementet -->
 							<element name="first_name">
 								<data type="String"></data>
@@ -27,6 +28,7 @@
 								<data type="String"></data>
 							</element>
 						</element> <!-- Her slutter author-elementet -->
+						<group>
 						<element name="editor"> <!-- Her starter editor-elementet -->
 							<element name="first_name">
 								<data type="String"></data>
@@ -40,6 +42,9 @@
 								<data type="String"></data>
 							</element>
 						</element> <!-- Her slutter editor-elementet -->
+						</group>
+						</choice>
+						<optional>
 						<element name="adress">
 							<element name="street_name">
 								<data type="String"></data>
@@ -47,8 +52,11 @@
 							<element name="number">
 								<data type="Integer"
 							</element>
+							<element name="zip>
 							<data type="Integer"></data>
+							</element>
 						</element>
+						</optional>
 						<!-- Her sier vi at en som har deltatt på boken kan ha 
 						null eller flere telefonnummere. Henholdsvis delt opp i hjemmenummer og mobilnummer.
 						Kan eventuelt legge til jobbtelefon hvis ønskelig. Rekkefølgen på nummerne er ikke farlig. -->
@@ -84,6 +92,87 @@
 				<data type="String"></data>
 			</element>
 			</interleave>
+			
+			<!-- her starter academic field-elementet -->
+			<oneOrMore>
+				<element name="academic_field">
+					<data type="String"></data>
+					<!-- HER MÅ DET KOMME EN REFERANSE TIL ANDRE BØKER I SAMME FELT -->
+				</element>
+			</oneOrMore>
+			<!-- her slutter academic field-elementet -->
+			
+			<!-- Her starter publisher-elementet -->
+			<element name="publisher">
+				<element name="publisher_name">
+					<data type="String"></data>
+				</element>
+				<element name="publisher_webpage">
+					<data type="String"></data>
+				</element>
+				<zeroOrMore>
+				<element name="publisher_phone">
+					<data type="Integer"></data>
+				</element>
+				</zeroOrMore>
+				<element name="publisher_mail">
+					<data type="String"></data>
+				</element>
+				<element name="adress">
+							<element name="street_name">
+								<data type="String"></data>
+							</element>
+							<element name="number">
+								<data type="Integer"
+							</element>
+							<element name="zip>
+							<data type="Integer"></data>
+							</element>
+				</element>
+				<element name="contact_person">
+							<element name="first_name">
+								<data type="String"></data>
+							</element>
+							<optional>
+							<element name="middle_name">
+								<data type="String"></data>
+							</element>	
+							</optional>
+							<element name="last_name">
+								<data type="String"></data>
+							</element>
+							<optional>
+							<element name="adress">
+								<element name="street_name">
+									<data type="String"></data>
+								</element>
+								<element name="number">
+									<data type="Integer"
+								</element>
+								<element name="zip>
+								<data type="Integer"></data>
+								</element>
+							</optional>
+							<zeroOrMore>
+								<element name="phone">
+									<optional>
+										<element name="home_phone">
+											<data type="Integer"></data>
+										</element>
+									</optional>
+									<optional>
+										<element name="mobile_phone">
+											<data type="Integer"></data>
+										</element>
+									</optional>
+								</element>
+							</zeroOrMore>
+							<element name="responsible_field">
+								<data type="String"></data>
+							</element>
+					</element><!-- her slutter contact person_elementet -->
+			</element><!-- her slutter publisher-elementet -->
+			
 			
 			
 		</element> <!-- Her slutter book-elementet -->
