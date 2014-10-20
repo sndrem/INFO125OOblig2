@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Root element som arver datatyper fra xmlSchema-datatypes -->
+<element name="books" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+	<!-- Alle books-elementer kan ha 0 eller flere bøker -->
+	<zeroOrMore>
+		<element name="book"> <!-- Her starter book-elementet -->
+			<!-- Alle bøker kan ha en eller flere som har jobbet med boken.
+			Vi skiller mellom forfattere og editors, selv om en bok kun kan ha en editor uten forfatter, 
+			selv om dette er veldig sjeldent. -->
+			<interleave>
+			<oneOrMore><!-- Her starter contributor-elementet -->
+				<element name="contributor"> 
+					<zeroOrMore>
+					<!-- Her sier vi at rekkefølgen på om vi først definerer tittel, adresse, navn på forfatter
+					eller editor er vilkårlig. Denne kan fjernes om ønskelig. -->
+					<interleave>
+						<element name="author"> <!-- Her starter author-elementet -->
+							<element name="first_name">
+								<data type="String"></data>
+							</element>
+							<optional>
+							<element name="middle_name">
+								<data type="String"></data>
+							</element>	
+							</optional>
+							<element name="last_name">
+								<data type="String"></data>
+							</element>
+						</element> <!-- Her slutter author-elementet -->
+						<element name="editor"> <!-- Her starter editor-elementet -->
+							<element name="first_name">
+								<data type="String"></data>
+							</element>
+							<optional>
+							<element name="middle_name">
+								<data type="String"></data>
+							</element>	
+							</optional>
+							<element name="last_name">
+								<data type="String"></data>
+							</element>
+						</element> <!-- Her slutter editor-elementet -->
+						<element name="adress">
+							<element name="street_name">
+								<data type="String"></data>
+							</element>
+							<element name="number">
+								<data type="Integer"
+							</element>
+							<data type="Integer"></data>
+						</element>
+						<!-- Her sier vi at en som har deltatt på boken kan ha 
+						null eller flere telefonnummere. Henholdsvis delt opp i hjemmenummer og mobilnummer.
+						Kan eventuelt legge til jobbtelefon hvis ønskelig. Rekkefølgen på nummerne er ikke farlig. -->
+						<zeroOrMore>
+							<element name="telephone"> <!-- Her starter telephone-elementet -->
+								<interleave>
+									<element name="home_phone">
+										<data type="Integer"></data>
+									</element>
+									<element name="mobile_phone">
+										<data type="Integer"></data>
+									</element>
+								</interleave>
+							</element> <!-- Her slutter telephone-elementet -->
+						</zeroOrMore>
+					</interleave>
+					</zeroOrMore>
+					<!-- En som har skrevet på boken kan ha null eller flere mailadresser. -->
+					<zeroOrMore>
+					<element name="mail">
+						<data type="String"></data>
+					</element>
+					</zeroOrMore>
+				</element> 
+			</oneOrMore> <!-- Her slutter contributor-elementet -->
+			<element name="ISBN_Number">
+				<data type="Integer"></data>
+			</element>
+			<element name="title>">
+				<data type="String"></data>
+			</element>
+			<element type="edition_number">
+				<data type="String"></data>
+			</element>
+			</interleave>
+			
+			
+		</element> <!-- Her slutter book-elementet -->
+	</zeroOrMore>
+</element>

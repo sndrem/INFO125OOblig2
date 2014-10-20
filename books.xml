@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books>
+	<book>
+		<contributor>
+			<author>
+				<firstName>Eli</firstName>
+				<middleName></middleName>
+				<lastName>Pariser</lastName>
+			</author>
+			<editor>Unknown</editor>
+			<adress>
+				<streetName>Hakkebakkeskogen</streetName>
+				<number>60</number>
+				<zip>5174</zip>
+			</adress>
+			<telephone>
+				<home_phone>12345678</home_phone>
+				<mobile_phone>48271395</mobile_phone>
+			</telephone>
+			<mail>eli.pariser@filterbubble.com</mail>
+		</contributor>
+		<ISBN_Number>978-0-241-95452-2</ISBN_Number>
+		<title>The Filter Bubble: What the Internet is hiding from you</title>	
+		<edition_number>5</edition_number>
+		
+		
+		
+		<academic_field>Propaganda</academic_field>
+		<publisher>
+			<publisher_name>Unknown</publisher_name>
+			<publiser_webPage>filter.com</publiser_webPage>
+			<publisher_phone>902842892</publisher_phone>
+			<publiser_mail>filter@filter.com</publiser_mail>
+			<adress>
+				<streetName>Djevelberget</streetName>
+				<number>66</number>
+				<zip>5171</zip>
+			</adress>
+			<contact_person>
+				<firstName>Con</firstName>
+				<middleName>Tiki</middleName>
+				<lastName>Tact</lastName>
+				<adress>
+				<streetName>Kontaktbakken</streetName>
+				<number>19</number>
+				<zip>5174</zip>
+			</adress>
+			<phone>
+				<home_phone>43432301</home_phone>
+				<mobile_phone>784910211</mobile_phone>
+			</phone>
+			<responsible_field>Propaganda</responsible_field>
+			</contact_person>
+		</publisher>
+		
+		<table_of_content>
+			<component title="Propaganda" pageNumber=190>
+			<contributor>
+				<author>
+					<firstName>Eli</firstName>
+					<middleName></middleName>
+					<lastName>Pariser</lastName>
+				</author>
+				<editor>Unknown</editor>
+				<adress>
+					<streetName>Hakkebakkeskogen</streetName>
+					<number>60</number>
+					<zip>5174</zip>
+				</adress>
+				<telephone>
+					<home_phone>12345678</home_phone>
+					<mobile_phone>48271395</mobile_phone>
+				</telephone>
+				<mail>eli.pariser@filterbubble.com</mail>
+			</contributor>
+			<part>lalala</part>
+			<chapter>16</chapter>
+			<section>14</section>
+			<sub_section>3</sub_section>
+			<paragraph>2</paragraph>
+			</component>
+		</table_of_content>
+		
+		
+	</book>
+</books>
