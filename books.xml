@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?oxygen RNGSchema="booksTilRNG.rng" type="xml"?>
 <books>
 	<book>
 		<contributor>
@@ -8,11 +9,15 @@
 				<middleName></middleName>
 				<lastName>Pariser</lastName>
 			</author>
-			<editor>Unknown</editor>
+			<editor>
+				<firstName>Edi</firstName>
+				<middleName></middleName>
+				<lastName>Tor</lastName>
+			</editor>
 			<adress>
 				<streetName>Hakkebakkeskogen</streetName>
 				<number>60</number>
-				<zip>5174</zip>
+				<zip></zip>
 			</adress>
 			<telephone>
 				<home_phone>12345678</home_phone>
@@ -55,7 +60,7 @@
 		</publisher>
 		
 		<table_of_content>
-			<component title="Propaganda" pageNumber=190>
+			<component title="Propaganda" pageNumber=190 type="subsection">
 			<contributor>
 				<author>
 					<firstName>Eli</firstName>
@@ -74,11 +79,6 @@
 				</telephone>
 				<mail>eli.pariser@filterbubble.com</mail>
 			</contributor>
-			<part>lalala</part>
-			<chapter>16</chapter>
-			<section>14</section>
-			<sub_section>3</sub_section>
-			<paragraph>2</paragraph>
 			</component>
 		</table_of_content>
 		

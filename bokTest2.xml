@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="file:/O:/INFO125Oblig3/INFO125OOblig2/booksTilRNG.rng" type="xml"?>
+<books>
+    <book>
+        <contributor>
+            <author>
+                <first_name>Sindre</first_name>
+                <last_name>Moldeklev</last_name>
+            </author>
+            
+            <adress>
+                <street_name>Ørnefjellet</street_name>
+                <number>66</number>
+                <zip>5174 Mathopen</zip>
+            </adress>
+            <telephone>
+                <home_phone>55268815</home_phone>
+                <mobile_phone>48271395</mobile_phone>
+            </telephone>
+            <mail>sndrem@live.no</mail>
+        </contributor>
+        <ISBN_Number>2522-25866-2254</ISBN_Number>
+        <title>Lær RelaxNG</title>
+        <edition_number>4</edition_number>
+        <academic_field>Programming</academic_field>
+        <publisher>
+            <publisher_name>Kaare</publisher_name>
+            <publisher_webpage>kaarepublisher.com</publisher_webpage>
+            <publisher_phone>90044116</publisher_phone>
+            <publisher_mail>kaare@kaarepublisher.com</publisher_mail>
+            <adress>
+                <street_name>Olsenbakken</street_name>
+                <number>15</number>
+                <zip>5174 Mathopen</zip>
+            </adress>
+            <contact_person>
+                <first_name>Ole</first_name>
+                <middle_name>Andreas</middle_name>
+                <last_name>Jacobsen</last_name>
+                <adress>
+                    <street_name>Oletræet</street_name>
+                    <number>99</number>
+                    <zip>5171 Loddefjord</zip>
+                </adress>
+                <phone>
+                    <home_phone>98765744</home_phone>
+                    <mobile_phone>19876532</mobile_phone>
+                </phone>
+                <responsible_field>Books</responsible_field>
+            </contact_person>
+        </publisher>
+        <table_of_content title="XPATH" type="Chapter" page_number="78">
+            
+        </table_of_content>
+    </book>
+</books>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="12.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns=""
+            positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="INFO125_Oblig3.xpr">
+        <file name="INFO125OOblig2/bokTest.xml"/>
+        <file name="INFO125OOblig2/bokTest2.xml"/>
+        <file name="INFO125OOblig2/books.xml"/>
+        <file name="INFO125OOblig2/booksTilRNG.rng"/>
+    </projectTree>
+</project>

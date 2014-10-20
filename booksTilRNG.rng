@@ -1,0 +1,287 @@
+
+<!-- Root element som arver datatyper fra xmlSchema-datatypes -->
+<element name="books" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+	<!-- Alle books-elementer kan ha 0 eller flere bøker -->
+	<zeroOrMore>
+		<element name="book"> <!-- Her starter book-elementet -->
+			<!-- Alle bøker kan ha en eller flere som har jobbet med boken.
+			Vi skiller mellom forfattere og editors, selv om en bok kun kan ha en editor uten forfatter, 
+			selv om dette er veldig sjeldent. -->
+			<interleave>
+			<oneOrMore><!-- Her starter contributor-elementet -->
+				<element name="contributor"> 
+					<zeroOrMore>
+					<!-- Her sier vi at rekkefølgen på om vi først definerer tittel, adresse, navn på forfatter
+					eller editor er vilkårlig. Denne kan fjernes om ønskelig. -->
+					<interleave>
+						<choice>
+						<element name="author"> <!-- Her starter author-elementet -->
+							<element name="first_name">
+								<data type="string"/>
+							</element>
+							<optional>
+							<element name="middle_name">
+								<data type="string"/>
+							</element>	
+							</optional>
+							<element name="last_name">
+								<data type="string"/>
+							</element>
+						</element> <!-- Her slutter author-elementet -->
+						<group>
+						<element name="editor"> <!-- Her starter editor-elementet -->
+							<element name="first_name">
+								<data type="string"/>
+							</element>
+							<optional>
+							<element name="middle_name">
+								<data type="string"/>
+							</element>	
+							</optional>
+							<element name="last_name">
+								<data type="string"/>
+							</element>
+						</element> <!-- Her slutter editor-elementet -->
+						</group>
+						</choice>
+						<optional>
+						<element name="adress">
+							<optional>
+							<element name="street_name">
+								<data type="string"/>
+							</element>
+							<element name="number">
+								<data type="integer"/>
+							</element>
+							</optional>
+							<element name="zip">
+							<data type="string"/>
+							</element>
+						</element>
+						</optional>
+						<!-- Her sier vi at en som har deltatt på boken kan ha 
+						null eller flere telefonnummere. Henholdsvis delt opp i hjemmenummer og mobilnummer.
+						Kan eventuelt legge til jobbtelefon hvis ønskelig. Rekkefølgen på nummerne er ikke farlig. -->
+						<zeroOrMore>
+							<element name="telephone"> <!-- Her starter telephone-elementet -->
+								<interleave>
+									<optional>
+									<element name="home_phone">
+										<data type="integer"/>
+									</element>
+									</optional>
+									<optional>
+									<element name="mobile_phone">
+										<data type="integer"/>
+									</element>
+									</optional>
+								</interleave>
+							</element> <!-- Her slutter telephone-elementet -->
+						</zeroOrMore>
+						<zeroOrMore>
+							<element name="mail">
+								<data type="string"/>
+							</element>
+						</zeroOrMore>
+					</interleave>
+					</zeroOrMore>
+				</element>
+			</oneOrMore> <!-- Her slutter contributor-elementet -->
+			
+				<element name="ISBN_Number">
+				<data type="string"/>
+			</element>
+			<element name="title">
+				<data type="string"/>
+			</element>
+			<element name="edition_number">
+				<data type="string"/>
+			</element>
+			</interleave>
+			
+			<!-- her starter academic field-elementet -->
+			<oneOrMore>
+				<element name="academic_field">
+					<data type="string"/>
+					<!-- HER MÅ DET KOMME EN REFERANSE TIL ANDRE BØKER I SAMME FELT -->
+				</element>
+			</oneOrMore>
+			<!-- her slutter academic field-elementet -->
+			
+			<!-- Her starter publisher-elementet -->
+			<element name="publisher">
+				<element name="publisher_name">
+					<data type="string"/>
+				</element>
+				<element name="publisher_webpage">
+					<data type="string"/>
+				</element>
+				<zeroOrMore>
+				<element name="publisher_phone">
+					<data type="integer"/>
+				</element>
+				</zeroOrMore>
+				<element name="publisher_mail">
+					<data type="string"/>
+				</element>
+				<element name="adress">
+							<optional>
+							<element name="street_name">
+								<data type="string"/>
+							</element>
+							<element name="number">
+								<data type="integer"/>
+							</element>
+							</optional>
+							<element name="zip">
+							<data type="string"/>
+							</element>
+				</element>
+				<element name="contact_person">
+							<element name="first_name">
+								<data type="string"/>
+							</element>
+							<optional>
+							<element name="middle_name">
+								<data type="string"/>
+							</element>	
+							</optional>
+							<element name="last_name">
+								<data type="string"/>
+							</element>
+							<optional>
+							<element name="adress">
+								<optional>
+								<element name="street_name">
+									<data type="string"/>
+								</element>
+								<element name="number">
+									<data type="integer"/>
+								</element>
+								</optional>
+								<element name="zip">
+								<data type="string"/>
+								</element>
+								</element>
+							</optional>
+							<zeroOrMore>
+								<element name="phone">
+									<optional>
+										<element name="home_phone">
+											<data type="integer"/>
+										</element>
+									</optional>
+									<optional>
+										<element name="mobile_phone">
+											<data type="integer"/>
+										</element>
+									</optional>
+								</element>
+							</zeroOrMore>
+							<element name="responsible_field">
+								<data type="string"/>
+							</element>
+					</element><!-- her slutter contact person_elementet -->
+			</element><!-- her slutter publisher-elementet -->
+			
+			<!-- Her begynner table_of_content-elementet -->
+			<zeroOrMore>
+				<element name="table_of_content">
+					<attribute name="title">
+						<data type="string"/>
+					</attribute>
+					<optional>
+					<attribute name="type">
+						<data type="string"/>
+					</attribute>
+					</optional>
+					<optional>
+					<attribute name="page_number">
+						<data type="integer"/>
+					</attribute>
+					</optional>
+			<zeroOrMore>
+				<element name="contributor"> 
+					<zeroOrMore>
+						<!-- Her sier vi at rekkefølgen på om vi først definerer tittel, adresse, navn på forfatter
+							eller editor er vilkårlig. Denne kan fjernes om ønskelig. -->
+						<interleave>
+							<choice>
+								<element name="author"> <!-- Her starter author-elementet -->
+									<element name="first_name">
+										<data type="string"/>
+									</element>
+									<optional>
+										<element name="middle_name">
+											<data type="string"/>
+										</element>	
+									</optional>
+									<element name="last_name">
+										<data type="string"/>
+									</element>
+								</element> <!-- Her slutter author-elementet -->
+								<group>
+									<element name="editor"> <!-- Her starter editor-elementet -->
+										<element name="first_name">
+											<data type="string"/>
+										</element>
+										<optional>
+											<element name="middle_name">
+												<data type="string"/>
+											</element>	
+										</optional>
+										<element name="last_name">
+											<data type="string"/>
+										</element>
+									</element> <!-- Her slutter editor-elementet -->
+								</group>
+							</choice>
+							<optional>
+								<element name="adress">
+									<optional>
+									<element name="street_name">
+										<data type="string"/>
+									</element>
+									<element name="number">
+										<data type="integer"/>
+									</element>
+									</optional>
+									<element name="zip">
+										<data type="string"/>
+									</element>
+								</element>
+							</optional>
+							<!-- Her sier vi at en som har deltatt på boken kan ha 
+								null eller flere telefonnummere. Henholdsvis delt opp i hjemmenummer og mobilnummer.
+								Kan eventuelt legge til jobbtelefon hvis ønskelig. Rekkefølgen på nummerne er ikke farlig. -->
+							<zeroOrMore>
+								<element name="telephone"> <!-- Her starter telephone-elementet -->
+									<interleave>
+										<optional>
+											<element name="home_phone">
+												<data type="integer"/>
+											</element>
+										</optional>
+										<optional>
+											<element name="mobile_phone">
+												<data type="integer"/>
+											</element>
+										</optional>
+									</interleave>
+								</element> <!-- Her slutter telephone-elementet -->
+							</zeroOrMore>
+						</interleave>
+					</zeroOrMore>
+					<!-- En som har skrevet på boken kan ha null eller flere mailadresser. -->
+					<zeroOrMore>
+						<element name="mail">
+							<data type="string"/>
+						</element>
+					</zeroOrMore>
+				</element> 
+			</zeroOrMore>
+				</element>				
+			</zeroOrMore> <!-- Her slutter table_of_content-elementet -->
+		</element> 
+	</zeroOrMore> <!-- Her slutter book-elementet -->
+</element>
